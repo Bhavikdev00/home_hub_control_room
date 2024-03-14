@@ -5,6 +5,7 @@ import 'package:home_hub_control_room/constant/app_color.dart';
 import 'package:home_hub_control_room/ui/Drawer%20Screen/drawer_screen_controller.dart';
 import 'package:home_hub_control_room/ui/Service%20Provider%20Menagement/service_provider_menagement_screen.dart';
 import 'package:home_hub_control_room/ui/Services%20Screen/services_screen.dart';
+import 'package:sizer/sizer.dart';
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({super.key});
@@ -79,8 +80,13 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     drawerScreenController.advancedDrawerController
                         .hideDrawer();
                   },
-                  leading: const Icon(Icons.home),
-                  title: const Text('Home'),
+                  leading: Image.asset(
+                    "assets/images/add-friend.png",
+                    color: Colors.white,
+                    width: 20,
+                  ),
+                  title: Text('Provider Requests',
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
                 ),
                 ListTile(
                   onTap: () {
@@ -88,26 +94,30 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     drawerScreenController.advancedDrawerController
                         .hideDrawer();
                   },
-                  leading: const Icon(Icons.miscellaneous_services_outlined),
-                  title: const Text('Services'),
+                  leading: const Icon(Icons.miscellaneous_services_outlined,
+                      size: 28),
+                  title: Text('Services',
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
                 ),
                 ListTile(
-                  onTap: () {
-                    drawerScreenController.setScreenNo(2);
-                    drawerScreenController.advancedDrawerController
-                        .hideDrawer();
-                  },
                   leading: Image.asset(
                     "assets/images/discount.png",
                     color: Colors.white,
                     width: 20,
                   ),
-                  title: const Text('Offers'),
+                  onTap: () {
+                    drawerScreenController.setScreenNo(2);
+                    drawerScreenController.advancedDrawerController
+                        .hideDrawer();
+                  },
+                  title: Text('Offers',
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
                 ),
                 ListTile(
                   onTap: () {},
                   leading: const Icon(Icons.settings),
-                  title: const Text('Tranzaction'),
+                  title: Text('Tranzaction',
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
                 ),
                 const Spacer(),
                 DefaultTextStyle(

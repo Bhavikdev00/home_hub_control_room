@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:home_hub_control_room/constant/app_assets.dart';
+import 'package:home_hub_control_room/utils/app_routes.dart';
 import 'package:home_hub_control_room/utils/extension.dart';
 import 'package:sizer/sizer.dart';
 
@@ -14,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool isPassshow = true;
   final key = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -56,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextFormField(
                   controller: passwordController,
+                  obscureText: isPassshow,
                   validator: (value) {
                     if (value == null || !AppAssets.isvalidpassword(value)) {
                       return "Enter the validPassword";
@@ -69,7 +73,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       filled: true,
                       fillColor: Colors.grey[100],
                       prefixIcon: const Icon(Icons.password),
-                      suffixIcon: const Icon(Icons.remove_red_eye_sharp)),
+                      suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isPassshow = !isPassshow;
+                            });
+                          },
+                          child: Icon(isPassshow == false
+                              ? Icons.visibility_off
+                              : Icons.remove_red_eye_sharp))),
                 ),
                 SizedBox(
                   height: 15.h,
@@ -90,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               messege: "Please Enter valid password");
                         } else {
                           ///Navigate to home page
+                          Get.offAllNamed(Routes.drawerScreen);
                         }
                       }
                     },

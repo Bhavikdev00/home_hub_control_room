@@ -1,5 +1,6 @@
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
+import 'package:home_hub_control_room/ui/Offer%20Screen/offer_screen.dart';
 import 'package:home_hub_control_room/ui/Service%20Provider%20Menagement/service_provider_menagement_screen.dart';
 import 'package:home_hub_control_room/ui/Services%20Screen/services_screen.dart';
 
@@ -8,7 +9,8 @@ class DrawerScreenController extends GetxController {
   int screenNo = 0;
   List widgets = [
     const ServiceProviderMenagementScreen(),
-    ServicesScreen(),
+    const ServicesScreen(),
+    const OfferScreen()
   ];
 
   void setScreenNo(int value) {

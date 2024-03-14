@@ -497,6 +497,7 @@ Widget customTextFormField(
     {TextEditingController? textEditingController,
     Color? fillColor,
     String? Function(String?)? validator,
+    void Function(String)? onChanged,
     Widget? suffix,
     int? maxLines,
     String? hintText}) {
@@ -505,6 +506,7 @@ Widget customTextFormField(
         (string) {
           return null;
         },
+    onChanged: onChanged,
     controller: textEditingController,
     minLines: 1,
     maxLines: maxLines,

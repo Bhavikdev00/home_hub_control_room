@@ -11,3 +11,4 @@ CollectionReference serviceProviderRequestCollection =
     firestore.collection("service_provider_requests");
 CollectionReference serviceProviders =
     firestore.collection("service_providers");
+CollectionReference offerCollection = firestore.collection("offers");
