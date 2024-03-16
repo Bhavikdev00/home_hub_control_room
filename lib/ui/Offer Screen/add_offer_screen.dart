@@ -18,7 +18,7 @@ class AddOfferScreen extends StatefulWidget {
 class _AddOfferScreenState extends State<AddOfferScreen> {
   AddOfferScreenController addOfferScreenController =
       Get.put(AddOfferScreenController());
-  NetworkController networkController = Get.find<NetworkController>();
+  // NetworkController networkController = Get.find<NetworkController>();
   final formKey = GlobalKey<FormState>();
   @override
   void dispose() {
