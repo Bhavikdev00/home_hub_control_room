@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:home_hub_control_room/Firebase%20Service/repo.dart';
-import 'package:home_hub_control_room/ui/Response%20Model/offer_res_model.dart';
+import 'package:home_hub_control_room/Response%20Model/offer_res_model.dart';
 
 class OfferScreenController extends GetxController {
   List<OfferResModel> offersData = [];

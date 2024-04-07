@@ -12,6 +12,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:home_hub_control_room/Firebase%20Service/notification_service.dart';
 import 'package:home_hub_control_room/network/network_binding.dart';
 import 'package:home_hub_control_room/ui/Drawer%20Screen/drawer_screen_controller.dart';
+import 'package:home_hub_control_room/ui/home_screen/home_screen.dart';
 import 'package:home_hub_control_room/utils/app_routes.dart';
 import 'package:sizer/sizer.dart';
 
@@ -90,7 +91,8 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             useMaterial3: true,
           ),
-          initialRoute: Routes.splashScreen,
+
+          initialRoute: Routes.drawerScreen,
           getPages: Routes.getPages,
           // initialBinding: NetworkBinding(),
         );

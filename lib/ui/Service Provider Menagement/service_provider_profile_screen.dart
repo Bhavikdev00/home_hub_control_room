@@ -2,8 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:home_hub_control_room/Firebase%20Service/service_provider_req_service.dart';
+import 'package:home_hub_control_room/Response%20Model/service_provider_req_res_model.dart';
 import 'package:home_hub_control_room/constant/app_color.dart';
-import 'package:home_hub_control_room/ui/Response%20Model/service_provider_req_res_model.dart';
+
 import 'package:home_hub_control_room/utils/extension.dart';
 import 'package:sizer/sizer.dart';
 

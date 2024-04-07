@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:home_hub_control_room/Firebase%20Service/repo.dart';
-import 'package:home_hub_control_room/ui/Response%20Model/service_provider_req_res_model.dart';
+import 'package:home_hub_control_room/Response%20Model/service_provider_req_res_model.dart';
 
 class ServiceProviderReqService {
   static Future<List<ServiceProviderReqResModel>>

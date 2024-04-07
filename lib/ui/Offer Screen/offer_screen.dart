@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_hub_control_room/Response%20Model/offer_res_model.dart';
 import 'package:home_hub_control_room/ui/Drawer%20Screen/drawer_screen_controller.dart';
 import 'package:home_hub_control_room/ui/Offer%20Screen/offer_screen_controller.dart';
-import 'package:home_hub_control_room/ui/Response%20Model/offer_res_model.dart';
+
 import 'package:home_hub_control_room/utils/app_routes.dart';
 import 'package:home_hub_control_room/utils/extension.dart';
 import 'package:sizer/sizer.dart';

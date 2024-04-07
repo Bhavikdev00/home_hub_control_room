@@ -5,7 +5,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:home_hub_control_room/Firebase%20Service/repo.dart';
-import 'package:home_hub_control_room/ui/Response%20Model/service_res_model.dart';
+import 'package:home_hub_control_room/Response%20Model/service_res_model.dart';
+
 import 'package:home_hub_control_room/utils/extension.dart';
 import 'package:image_picker/image_picker.dart';
 

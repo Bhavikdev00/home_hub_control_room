@@ -2,9 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
+import 'package:home_hub_control_room/Response%20Model/service_provider_req_res_model.dart';
 import 'package:home_hub_control_room/constant/app_color.dart';
 import 'package:home_hub_control_room/ui/Drawer%20Screen/drawer_screen_controller.dart';
-import 'package:home_hub_control_room/ui/Response%20Model/service_provider_req_res_model.dart';
+
 import 'package:home_hub_control_room/ui/Service%20Provider%20Menagement/service_provider_menagement_controller.dart';
 import 'package:home_hub_control_room/ui/Widgets/app_search_field.dart';
 import 'package:home_hub_control_room/utils/app_routes.dart';
@@ -132,10 +133,13 @@ Widget pendingScreen() {
                                             "Email : ".boldOpenSans(
                                                 fontColor: Colors.black,
                                                 fontSize: 11.sp),
-                                            "${serviceProvider.email}"
-                                                .semiOpenSans(
-                                                    fontColor: Colors.black,
-                                                    fontSize: 12.sp),
+                                            SizedBox(
+                                              width: 60.w,
+                                              child: "${serviceProvider.email}"
+                                                  .semiOpenSans(
+                                                      fontColor: Colors.black,
+                                                      fontSize: 12.sp),
+                                            ),
                                           ],
                                         ),
                                         1.h.addHSpace(),
@@ -258,10 +262,13 @@ Widget completedScreen() {
                                             "Email : ".boldOpenSans(
                                                 fontColor: Colors.black,
                                                 fontSize: 11.sp),
-                                            "${serviceProvider.email}"
-                                                .semiOpenSans(
-                                                    fontColor: Colors.black,
-                                                    fontSize: 12.sp),
+                                            SizedBox(
+                                              width: 60.w,
+                                              child: "${serviceProvider.email}"
+                                                  .semiOpenSans(
+                                                      fontColor: Colors.black,
+                                                      fontSize: 12.sp),
+                                            ),
                                           ],
                                         ),
                                         1.h.addHSpace(),
@@ -384,10 +391,15 @@ Widget rejectedScreen() {
                                             "Email : ".boldOpenSans(
                                                 fontColor: Colors.black,
                                                 fontSize: 11.sp),
-                                            "${serviceProvider.email}"
-                                                .semiOpenSans(
-                                                    fontColor: Colors.black,
-                                                    fontSize: 12.sp),
+                                            SizedBox(
+                                              width: 60.w,
+                                              child: "${serviceProvider.email}"
+                                                  .semiOpenSans(
+                                                      textOverflow:
+                                                          TextOverflow.ellipsis,
+                                                      fontColor: Colors.black,
+                                                      fontSize: 12.sp),
+                                            ),
                                           ],
                                         ),
                                         1.h.addHSpace(),

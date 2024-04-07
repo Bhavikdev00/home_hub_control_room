@@ -12,3 +12,8 @@ CollectionReference serviceProviderRequestCollection =
 CollectionReference serviceProviders =
     firestore.collection("service_providers");
 CollectionReference offerCollection = firestore.collection("offers");
+CollectionReference paymentRequestCollection =
+    firestore.collection("Payment_request");
+CollectionReference transectionCollection =
+    firestore.collection("transectionCollection");
+CollectionReference userCollection = firestore.collection("User");

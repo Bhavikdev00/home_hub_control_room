@@ -5,6 +5,7 @@ import 'package:home_hub_control_room/constant/app_color.dart';
 import 'package:home_hub_control_room/ui/Drawer%20Screen/drawer_screen_controller.dart';
 import 'package:home_hub_control_room/ui/Service%20Provider%20Menagement/service_provider_menagement_screen.dart';
 import 'package:home_hub_control_room/ui/Services%20Screen/services_screen.dart';
+import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -80,13 +81,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     drawerScreenController.advancedDrawerController
                         .hideDrawer();
                   },
-                  leading: Image.asset(
-                    "assets/images/add-friend.png",
-                    color: Colors.white,
-                    width: 20,
-                  ),
-                  title: Text('Provider Requests',
-                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
+                  leading: const Icon(Icons.home, size: 28, color: appColor),
+                  title: Text('Home',
+                      style: TextStyle(color: appColor, fontSize: 14.sp)),
                 ),
                 ListTile(
                   onTap: () {
@@ -94,30 +91,72 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     drawerScreenController.advancedDrawerController
                         .hideDrawer();
                   },
-                  leading: const Icon(Icons.miscellaneous_services_outlined,
-                      size: 28),
-                  title: Text('Services',
-                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
-                ),
-                ListTile(
                   leading: Image.asset(
-                    "assets/images/discount.png",
-                    color: Colors.white,
+                    "assets/images/add-friend.png",
+                    color: appColor,
                     width: 20,
                   ),
+                  title: Text('Provider Requests',
+                      style: TextStyle(color: appColor, fontSize: 14.sp)),
+                ),
+                ListTile(
                   onTap: () {
                     drawerScreenController.setScreenNo(2);
                     drawerScreenController.advancedDrawerController
                         .hideDrawer();
                   },
-                  title: Text('Offers',
-                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
+                  leading: const Icon(Icons.miscellaneous_services_outlined,
+                      size: 28, color: appColor),
+                  title: Text('Services',
+                      style: TextStyle(color: appColor, fontSize: 14.sp)),
                 ),
                 ListTile(
-                  onTap: () {},
-                  leading: const Icon(Icons.settings),
-                  title: Text('Tranzaction',
-                      style: TextStyle(color: Colors.white, fontSize: 14.sp)),
+                  leading: Image.asset(
+                    "assets/images/discount.png",
+                    color: appColor,
+                    width: 20,
+                  ),
+                  onTap: () {
+                    drawerScreenController.setScreenNo(3);
+                    drawerScreenController.advancedDrawerController
+                        .hideDrawer();
+                  },
+                  title: Text('Offers',
+                      style: TextStyle(color: appColor, fontSize: 14.sp)),
+                ),
+                ListTile(
+                  onTap: () {
+                    drawerScreenController.setScreenNo(4);
+                    drawerScreenController.advancedDrawerController
+                        .hideDrawer();
+                  },
+                  leading: Image.asset(
+                    "assets/images/money.png",
+                    color: appColor,
+                    width: 21,
+                  ),
+                  title: Text('Payment Requests',
+                      style: TextStyle(color: appColor, fontSize: 14.sp)),
+                ),
+                ListTile(
+                  onTap: () {
+                    drawerScreenController.setScreenNo(5);
+                    drawerScreenController.advancedDrawerController
+                        .hideDrawer();
+                  },
+                  leading: const Icon(Icons.settings, color: appColor),
+                  title: Text('Transaction',
+                      style: TextStyle(color: appColor, fontSize: 14.sp)),
+                ),
+                ListTile(
+                  onTap: () {
+                    drawerScreenController.setScreenNo(6);
+                    drawerScreenController.advancedDrawerController
+                        .hideDrawer();
+                  },
+                  leading: const Icon(Icons.notifications, color: appColor),
+                  title: Text('Send Notification',
+                      style: TextStyle(color: appColor, fontSize: 14.sp)),
                 ),
                 const Spacer(),
                 DefaultTextStyle(
