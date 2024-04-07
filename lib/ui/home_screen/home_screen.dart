@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ],
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Image.asset(
                                   "assets/images/img.png",
                                   width: 40,
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ).paddingSymmetric(vertical: 2.h, horizontal: 2.w),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Card(
                           child: Container(
                             width: 45.w,
@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ],
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Image.asset(
                                   "assets/images/img_1.png",
                                   width: 40,
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ],
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Image.asset(
                                   "assets/images/img_2.png",
                                   width: 35,
@@ -167,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ).paddingSymmetric(vertical: 2.h, horizontal: 2.w),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Card(
                           child: Container(
                             width: 45.w,
@@ -190,20 +190,73 @@ class _HomeScreenState extends State<HomeScreen> {
                                             fontColor: Colors.black),
                                       ),
                                       Center(
-                                        child:
-                                            "${controller.userData["refund"]}"
-                                                .boldOpenSans(
-                                                    fontSize: 12.sp,
-                                                    fontColor: Colors.black),
+                                        child: "${controller.totalOrders}"
+                                            .boldOpenSans(
+                                                fontSize: 12.sp,
+                                                fontColor: Colors.black),
                                       ),
                                     ],
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Image.asset(
                                   "assets/images/img_3.png",
                                   width: 40,
                                 )
+                              ],
+                            ).paddingSymmetric(vertical: 2.h, horizontal: 2.w),
+                          ),
+                        ),
+                      ],
+                    ),
+                    3.h.addHSpace(),
+                    Row(
+                      children: [
+                        Card(
+                          child: Container(
+                            width: 45.w,
+                            height: 15.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Center(
+                                  child: "Service Providers".boldOpenSans(
+                                      fontSize: 12.sp, fontColor: Colors.black),
+                                ),
+                                Center(
+                                  child: "${controller.totalProviders}"
+                                      .boldOpenSans(
+                                          fontSize: 14.sp,
+                                          fontColor: Colors.black),
+                                ),
+                              ],
+                            ).paddingSymmetric(vertical: 2.h, horizontal: 2.w),
+                          ),
+                        ),
+                        const Spacer(),
+                        Card(
+                          child: Container(
+                            width: 45.w,
+                            height: 15.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Center(
+                                  child: "Total Users".boldOpenSans(
+                                      fontSize: 12.sp, fontColor: Colors.black),
+                                ),
+                                Center(
+                                  child: "${controller.totalUsers}"
+                                      .boldOpenSans(
+                                          fontSize: 14.sp,
+                                          fontColor: Colors.black),
+                                ),
                               ],
                             ).paddingSymmetric(vertical: 2.h, horizontal: 2.w),
                           ),
