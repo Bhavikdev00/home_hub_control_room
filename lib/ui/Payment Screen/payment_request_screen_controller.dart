@@ -118,7 +118,6 @@ class PaymentRequestScreenController extends GetxController {
     isSendPayment = true;
     update();
     selectedIndex.forEach((element) async {
-      await paymentRequestCollection.doc(refundData[element].id).delete();
       Map<String, dynamic> emptyMap = {};
       DocumentReference dd = await transectionCollection.add(emptyMap);
       TransectionResModel transectionResModel = TransectionResModel(
@@ -130,6 +129,23 @@ class PaymentRequestScreenController extends GetxController {
           transectionId: dd.id,
           time: DateTime.now());
       await transectionCollection.doc(dd.id).set(transectionResModel.toMap());
+
+      ///Code FOr update Wallet info in firebase for admin
+      DocumentSnapshot adminDD = await FirebaseFirestore.instance
+          .collection("Admin")
+          .doc("adminData")
+          .get();
+      Map<String, dynamic> adminData = adminDD.data() as Map<String, dynamic>;
+
+      await FirebaseFirestore.instance
+          .collection("Admin")
+          .doc("adminData")
+          .update({"refund": adminData["refund"] + refundData[element].amount});
+      await FirebaseFirestore.instance
+          .collection("Admin")
+          .doc("adminData")
+          .update({"wallet": adminData["wallet"] - refundData[element].amount});
+      await paymentRequestCollection.doc(refundData[element].id).delete();
       NotificationService.sendMessage(
           title: "Partial Payment Refund",
           msg: "80% of your payment has been refunded by the admin.",

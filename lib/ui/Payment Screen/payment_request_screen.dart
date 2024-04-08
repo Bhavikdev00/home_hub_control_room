@@ -118,30 +118,29 @@ class _PaymentRequestScreenState extends State<PaymentRequestScreen> {
                                                               fontSize: 11.sp,
                                                               onTap: () async {
                                                                 await controller
-                                                                    .sendPayment();
-                                                                Get.back();
-                                                                Get.dialog(
-                                                                    StatefulBuilder(
-                                                                  builder: (context,
-                                                                      setState) {
-                                                                    backAfterTime();
-                                                                    return Dialog(
-                                                                        backgroundColor:
-                                                                            Colors
-                                                                                .transparent,
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              500,
-                                                                          height:
-                                                                              300,
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          child:
-                                                                              Lottie.asset("assets/lottie/s.json"),
-                                                                        ));
+                                                                    .sendPayment()
+                                                                    .then(
+                                                                  (value) {
+                                                                    Get.back();
+                                                                    Get.dialog(
+                                                                        StatefulBuilder(
+                                                                      builder:
+                                                                          (context,
+                                                                              setState) {
+                                                                        backAfterTime();
+                                                                        return Dialog(
+                                                                            backgroundColor:
+                                                                                Colors.transparent,
+                                                                            child: Container(
+                                                                              width: 500,
+                                                                              height: 300,
+                                                                              color: Colors.transparent,
+                                                                              child: Lottie.asset("assets/lottie/s.json"),
+                                                                            ));
+                                                                      },
+                                                                    ));
                                                                   },
-                                                                ));
+                                                                );
                                                               })),
                                                       1.w.addWSpace(),
                                                     ],
@@ -431,6 +430,30 @@ class _PaymentRequestScreenState extends State<PaymentRequestScreen> {
                                   await transectionCollection
                                       .doc(dd.id)
                                       .set(t.toMap());
+
+                                  ///Code FOr update Wallet info in firebase for admin
+                                  DocumentSnapshot adminDD =
+                                      await FirebaseFirestore.instance
+                                          .collection("Admin")
+                                          .doc("adminData")
+                                          .get();
+                                  Map<String, dynamic> adminData =
+                                      adminDD.data() as Map<String, dynamic>;
+
+                                  await FirebaseFirestore.instance
+                                      .collection("Admin")
+                                      .doc("adminData")
+                                      .update({
+                                    "payment": adminData["payment"] +
+                                        withdrawalResModel.amountWithdraw
+                                  });
+                                  await FirebaseFirestore.instance
+                                      .collection("Admin")
+                                      .doc("adminData")
+                                      .update({
+                                    "wallet": adminData["wallet"] -
+                                        withdrawalResModel.amountWithdraw
+                                  });
                                   Get.back();
                                   NotificationService.sendMessage(
                                       title: "Withdrawal Amount",
